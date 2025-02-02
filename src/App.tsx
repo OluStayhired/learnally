@@ -1071,7 +1071,7 @@ I teach solopreneurs with zero technical experience how to build beautiful produ
             Contact
           </li>
                    <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                     <a href="https:/joinlearnally.com/privacy.html" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                     <a href="https://www.joinlearnally.com/privacy.html" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
             Privacy Policy </a>
           </li>
         </ul>
