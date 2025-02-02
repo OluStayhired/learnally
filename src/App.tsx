@@ -96,7 +96,7 @@ We'll break down the process into manageable steps, so you'll see real progress 
     },
    {
     question: "What if my product doesn't stand out from the competition?",
-    answer: <>This is something all entrepreneurs think about. While this program focuses on the creation of your product – giving you the tools and skills to build it without developers – it doesn't directly cover extensive market positioning or competitive analysis.<br/><br/>  However, I understand how crucial it is for your product to stand out. I've personally helped numerous solo founders just like you reposition their products for greater market impact, and I'm happy to offer additional consultation on this aspect.</>  
+    answer: <>This is something all entrepreneurs think about... While this program focuses on the creation of your product – giving you the tools and skills to build it without developers – it doesn't directly cover extensive market positioning or competitive analysis.<br/><br/>  However, I understand how crucial it is for your product to stand out. I've personally helped numerous solo founders just like you reposition their products for greater market impact, and I'm happy to offer additional consultation on this aspect.</>  
     }
   ];
 
