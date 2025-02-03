@@ -1098,9 +1098,9 @@ I teach solopreneurs with zero technical experience how to build beautiful produ
       <div>
         <h3 className="text-xl font-bold mb-6">Connect</h3>
         <div className="space-y-4">
-          <a href="#" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+          <a href="https://www.linkedin.com/in/oluadedeji/" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
             <Linkedin className="w-5 h-5" />
-            <span>LinkedIn</span>
+            <span>Follow Olu on LinkedIn</span>
           </a>
           {/*} <a href="#" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
             <BlueskyLogo className="w-5 h-5" />
