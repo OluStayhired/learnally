@@ -190,7 +190,7 @@ We'll break down the process into manageable steps, so you'll see real progress 
             </div>
 
             {/* Right side - CTA Button */}
-            <div>
+            <div className="md:block hidden">
               <button 
                 onClick={() => window.open('https://meetings.hubspot.com/olu-adedeji', '_blank')}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 rounded-full font-semibold 
