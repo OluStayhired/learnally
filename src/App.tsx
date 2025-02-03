@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState }  from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
-import { BarChart2, Brain, Building2, Globe2, Mail, MessageSquare, Users, Zap, Clock, Database, Trophy, Palette, Rocket, Hammer, User, Shield, BookOpen, Sparkles,Aperture, Play, Pause, ChevronDown, Cloud, Globe, Linkedin } from 'lucide-react';
+import { BarChart2, Brain, Building2, Globe2, Mail, MessageSquare, Users, Zap, Clock, Database, Trophy, Palette, Rocket, Hammer, User, Shield, BookOpen, Sparkles,Aperture, Play, Pause, ChevronDown, Cloud, Globe, Linkedin, Menu, X } from 'lucide-react';
 import klaowtCase from './images/klaowt_case_3x.png';
 import AnimatedSvg from './components/AnimatedSvg';
 import mainHeroImage from './images/main_hero_draft01.png';
@@ -42,6 +42,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -96,7 +97,7 @@ We'll break down the process into manageable steps, so you'll see real progress 
     },
    {
     question: "What if my product doesn't stand out from the competition?",
-    answer: <>This is something all entrepreneurs think about.. While this program focuses on the creation of your product – giving you the tools and skills to build it without developers – it doesn't directly cover extensive market positioning or competitive analysis.<br/><br/>  However, I understand how crucial it is for your product to stand out. I've personally helped numerous solo founders just like you reposition their products for greater market impact, and I'm happy to offer additional consultation on this aspect.</>  
+    answer: <>This is something all entrepreneurs think about. While this program focuses on the creation of your product – giving you the tools and skills to build it without developers – it doesn't directly cover extensive market positioning or competitive analysis.<br/><br/>  However, I understand how crucial it is for your product to stand out. I've personally helped numerous solo founders just like you reposition their products for greater market impact, and I'm happy to offer additional consultation on this aspect.</>  
     }
   ];
 
@@ -136,11 +137,19 @@ We'll break down the process into manageable steps, so you'll see real progress 
 
   return (
     <div className="bg-[#0a0a0a] text-white">
-      <nav className="md:block hidden fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-800">
+      <nav className="md:block fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Left side - Logo/Brand */}
             <div className="flex items-center gap-12">
+                          
+              {/* Mobile Hamburger Menu */}
+              <div className="md:hidden flex items-center">
+        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-300 hover:text-white focus:outline-none">
+          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />} 
+          {/* Toggle icons */}
+        </button>
+            </div>
               <div className="flex items-center">
                 <Aperture className="w-6 h-6 text-yellow-400 flex-shrink-0 mr-2" />
                 <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
@@ -148,7 +157,10 @@ We'll break down the process into manageable steps, so you'll see real progress 
                 </span>
               </div>
 
-              {/* Navigation Menu */}
+
+
+              
+              {/* Desktop Navigation Menu */}
               <div className="hidden md:flex items-center gap-8">
                 <button 
                   onClick={() => scrollToSection('about-section')}
@@ -192,10 +204,35 @@ We'll break down the process into manageable steps, so you'll see real progress 
             </div>
           </div>
         </div>
+
+
+        {/* Mobile Menu (Hidden by default) */}
+  {isMobileMenuOpen && (
+    <div className="md:hidden absolute top-16 left-0 right-0 bg-[#0a0a0a]/80 backdrop-blur-md border-t border-gray-800 p-4"> {/* Adjust top value if needed */}
+      <div className="flex flex-col gap-4"> {/* Vertical menu items */}
+                <button onClick={() => { scrollToSection('home-section'); setIsMobileMenuOpen(false); }} className="text-gray-300 hover:text-white transition-colors">
+          Home
+        </button>
+        <button onClick={() => { scrollToSection('about-section'); setIsMobileMenuOpen(false); }} className="text-gray-300 hover:text-white transition-colors">
+          About
+        </button>
+        <button onClick={() => { scrollToSection('course-overview'); setIsMobileMenuOpen(false); }} className="text-gray-300 hover:text-white transition-colors">
+          The Course
+        </button>
+        <button onClick={() => { scrollToSection('FAQs'); setIsMobileMenuOpen(false); }} className="text-gray-300 hover:text-white transition-colors">
+          FAQ
+        </button>
+        <button onClick={() => { scrollToSection('price-plans'); setIsMobileMenuOpen(false); }} className="text-gray-300 hover:text-white transition-colors">
+          Pricing
+        </button>
+        {/* Add more mobile menu items as needed */}
+      </div>
+    </div>
+  )}
       </nav>
 
       {/* Hero Section */}
-      <header className="min-h-screen pt-24 relative overflow-hidden">
+      <header id="home-section" className="min-h-screen pt-24 relative overflow-hidden">
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-[#0a0a0a]">
         
@@ -978,6 +1015,23 @@ I teach solopreneurs with zero technical experience how to build beautiful produ
       <div>
         <h3 className="text-xl font-bold mb-6">Quick Links</h3>
         <ul className="space-y-4 text-gray-400">
+          <li className="hover:text-blue-400 transition-colors cursor-pointer">
+  <a 
+    href="#home-section" 
+    onClick={(e) => {
+      e.preventDefault();
+      const element = document.getElementById('home-section');
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }}
+  >
+    Home
+  </a>
+</li>
 <li className="hover:text-blue-400 transition-colors cursor-pointer">
   <a 
     href="#about-section" 
@@ -1071,7 +1125,7 @@ I teach solopreneurs with zero technical experience how to build beautiful produ
             Contact
           </li>
                    <li className="hover:text-blue-400 transition-colors cursor-pointer">
-                     <a href="https://www.joinlearnally.com/privacy.html" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                     <a href="/privacy.html" className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
             Privacy Policy </a>
           </li>
         </ul>
