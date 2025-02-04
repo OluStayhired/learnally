@@ -975,8 +975,9 @@ I teach solopreneurs with zero technical experience how to build beautiful produ
 
       {/* CTA Button */}
       <div className="space-y-4">
-      onClick={() => setIsPreOrderModalOpen(true)}
-        <button className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-full text-xl font-semibold hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 group mx-auto">
+        <button 
+        onClick={() => setIsPreOrderModalOpen(true)}
+        className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-full text-xl font-semibold hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 group mx-auto">
           Get Started Now
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </button>
