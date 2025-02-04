@@ -984,7 +984,7 @@ I teach solopreneurs with zero technical experience how to build beautiful produ
 
         {/* Additional Info */}
         <div className="space-y-2 text-center">
-          <p className="text-yellow-400 font-bold mb-8">⚡Limited Slots Available</p>
+          <p className="text-yellow-400 font-bold mb-8">⚡Limited Slots Available.</p>
           
           <p className="text-gray-400 text-lg">🛡️Results-Based Guarantee </p>
           <p className="text-gray-400 text-lg max-w-lg mx-auto">
